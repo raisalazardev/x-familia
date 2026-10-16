@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>X Família | Hamburgueria</title>
+    <meta
+      name="description"
+      content="X Família — hambúrgueres, pastéis, porções, sucos e muito mais. Monte seu pedido no cardápio digital e finalize pelo WhatsApp."
+    />
+    <meta name="theme-color" content="#171313" />
+
+    <!-- Compartilhamento (WhatsApp, Instagram etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="X Família | Hamburgueria" />
+    <meta
+      property="og:description"
+      content="Fome de verdade. Sabor de família. Peça pelo cardápio digital."
+    />
+    // Ideaia do Site
+    <!-- <meta property="og:url" content="https://www.xfamilia.com.br/" />
+    <meta
+      property="og:image"
+      content="https://www.xfamilia.com.br/img/Monster-Burger.png"
+    /> -->
+
+    <meta
+      property="og:url"
+      content="https://raisalazardev.github.io/xfamilia/"
+    />
+    <meta
+      property="og:image"
+      content="https://raisalazardev.github.io/xfamilia/img/Monster-Burger.png"
+    />
+
+    <link rel="icon" href="./img/logo-x-family.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./javascript/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- =====================================================
+         1. CABEÇALHO
+         O botão "Nosso cardápio" leva direto ao cardápio (#menu)
+    ===================================================== -->
+    <header class="site-header">
+      <a href="#" class="brand" aria-label="X Família - Página inicial">
+        <img
+          src="./img/logo-x-family.png"
+          alt="X Família Hamburgueria"
+          class="brand-logo"
+        />
+      </a>
+
+      <a class="header-cta" href="#menu">Nosso cardápio</a>
+    </header>
+
+    <main>
+      <!-- =====================================================
+           2. DESTAQUE DOS HAMBÚRGUERES (CARROSSEL)
+      ===================================================== -->
+      <section
+        class="carousel"
+        aria-label="Conheça nossos hambúrgueres"
+        aria-roledescription="carrossel"
+      >
+        <!-- Monster Burger -->
+        <article
+          class="item active"
+          style="--background: #210d12"
+          aria-label="Monster Burger"
+        >
+          <p class="product-category">SABOR QUE IMPRESSIONA</p>
+          <h1 class="title">Monster Burger</h1>
+
+          <img
+            src="./img/Monster-Burger.png"
+            class="burger-image"
+            alt="Monster Burger"
+            fetchpriority="high"
+          />
+          <img
+            src="./img/ing-monster-burger.png"
+            class="ingredients-image"
+            alt=""
+            aria-hidden="true"
+          />
+        </article>
+
+        <!-- Onion Burger -->
+        <article
+          class="item"
+          style="--background: #18251d"
+          aria-label="Onion Burger"
+          aria-hidden="true"
+        >
+          <p class="product-category">PARA QUEM AMA UM CLÁSSICO</p>
+          <h2 class="title">Onion Burger</h2>
+
+          <img
+            src="./img/Onion-Burger.png"
+            class="burger-image"
+            alt="Onion Burger"
+            loading="lazy"
+          />
+          <img
+            src="./img/ing-onion-burger.png"
+            class="ingredients-image"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+        </article>
+
+        <!-- Bacon Supreme -->
+        <article
+          class="item"
+          style="--background: #24140f"
+          aria-label="Bacon Supreme"
+          aria-hidden="true"
+        >
+          <p class="product-category">UMA EXPLOSÃO DE SABOR</p>
+          <h2 class="title">Bacon Supreme</h2>
+
+          <img
+            src="./img/Bacon-Supreme.png"
+            class="burger-image"
+            alt="Bacon Supreme"
+            loading="lazy"
+          />
+          <img
+            src="./img/ing-bacon-supreme.png"
+            class="ingredients-image"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+        </article>
+
+        <!-- Navegação do carrossel -->
+        <nav class="carousel-controls" aria-label="Navegação dos hambúrgueres">
+          <button
+            id="prev"
+            class="carousel-button"
+            type="button"
+            aria-label="Hambúrguer anterior"
+          >
+            &#8592;
+          </button>
+
+          <button
+            id="next"
+            class="carousel-button"
+            type="button"
+            aria-label="Próximo hambúrguer"
+          >
+            &#8594;
+          </button>
+        </nav>
+
+        <p class="carousel-hint">DESCUBRA SEU PRÓXIMO FAVORITO</p>
+
+        <a href="#cardapio" class="explore-link">
+          Conheça nossos sabores
+          <span aria-hidden="true">&#8595;</span>
+        </a>
+      </section>
+
+      <!-- =====================================================
+           3. APRESENTAÇÃO + CARDÁPIO DIGITAL
+      ===================================================== -->
+      <section class="brand-section" id="cardapio">
+        <p class="section-eyebrow">BEM-VINDO À X FAMÍLIA</p>
+
+        <h2>
+          Fome de verdade.
+          <span>Sabor de família.</span>
+        </h2>
+
+        <p class="brand-description">
+          Escolha seu lanche, monte o pedido e envie pelo WhatsApp.
+        </p>
+
+        <div class="menu" id="menu">
+          <h3 class="menu-title">Nosso cardápio</h3>
+
+          <!-- Aberto / fechado (atualizado pelo JavaScript) -->
+          <p class="open-status" id="open-status">
+            <span class="open-dot" aria-hidden="true"></span>
+            <span id="open-status-text"></span>
+          </p>
+
+          <!-- Avisos curtos, abaixo do horário de atendimento -->
+          <div class="menu-info">
+            <p class="area-info">
+              Área de atendimento:
+              <a
+                href="https://www.google.com/maps?q=-16.0122137,-49.7978287"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Itaberaí - GO</a
+              >
+            </p>
+            <p class="img-info">Imagens ilustrativas</p>
+          </div>
+
+          <!-- Busca + categorias (fica fixo no topo ao rolar o cardápio) -->
+          <div class="menu-toolbar">
+            <div class="search-box">
+              <label for="menu-search" class="sr-only"
+                >Buscar em todo o cardápio</label
+              >
+              <input
+                type="search"
+                id="menu-search"
+                placeholder="Buscar: X Bacon, pastel, suco..."
+                autocomplete="off"
+                enterkeyhint="search"
+              />
+              <button
+                type="button"
+                id="search-clear"
+                class="search-clear"
+                aria-label="Limpar busca"
+                hidden
+              >
+                &times;
+              </button>
+            </div>
+
+            <nav class="category-nav" aria-label="Categorias do cardápio">
+              <ul id="category-nav"></ul>
+            </nav>
+          </div>
+
+          <p
+            class="sr-only"
+            id="menu-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <!-- Produtos (montados pelo JavaScript) -->
+          <div id="menu-content"></div>
+
+          <div class="menu-empty" id="menu-empty" hidden>
+            <p>Não encontramos nenhum item com essa busca.</p>
+            <button type="button" class="btn-ghost" id="empty-reset">
+              Ver todo o cardápio
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         4. RODAPÉ
+    ===================================================== -->
+    <footer class="site-footer">
+      <a href="#" class="footer-brand">X <span>Família</span></a>
+
+      <div class="footer-contact">
+        <p class="footer-label">Pedidos / Delivery</p>
+        <p class="footer-hours" id="footer-hours"></p>
+        <ul id="footer-phones" class="footer-phones"></ul>
+        <a
+          class="footer-instagram"
+          href="https://instagram.com/xfamiliaoficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          >@xfamiliaoficial</a
+        >
+      </div>
+
+      <p>
+        &copy; <span id="current-year">2026</span> X Família. Todos os direitos
+        reservados.
+      </p>
+
+      <p class="links-legais">
+        <a href="privacidade.html" target="_blank" rel="noopener"
+          >Política de Privacidade</a
+        >
+        &middot;
+        <a href="termos.html" target="_blank" rel="noopener">Termos de Uso</a>
+      </p>
+
+      <p class="developer-credit">
+        Site desenvolvido por
+        <a
+          href="https://raisalazar.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Raí Salazar</a
+        >
+      </p>
+    </footer>
+
+    <!-- =====================================================
+         5. BARRA FLUTUANTE DO CARRINHO
+    ===================================================== -->
+    <button
+      type="button"
+      class="cart-fab"
+      id="cart-fab"
+      hidden
+      aria-haspopup="dialog"
+    >
+      <span class="cart-fab-count" id="cart-fab-count" aria-hidden="true"
+        >0</span
+      >
+      <span class="cart-fab-label" id="cart-fab-label">Ver carrinho</span>
+      <span class="cart-fab-total" id="cart-fab-total"></span>
+    </button>
+
+    <!-- =====================================================
+         6. MODAL: PERSONALIZAR PRODUTO
+    ===================================================== -->
+    <dialog
+      class="modal modal-product"
+      id="product-dialog"
+      aria-labelledby="product-title"
+    >
+      <header class="modal-header">
+        <h3 id="product-title">Produto</h3>
+        <button type="button" class="icon-btn" data-close aria-label="Fechar">
+          &times;
+        </button>
+      </header>
+
+      <div class="modal-body" id="product-body"></div>
+      <footer class="modal-footer" id="product-footer"></footer>
+    </dialog>
+
+    <!-- =====================================================
+         7. MODAL: CARRINHO
+    ===================================================== -->
+    <dialog
+      class="modal modal-cart"
+      id="cart-dialog"
+      aria-labelledby="cart-title"
+    >
+      <header class="modal-header">
+        <h3 id="cart-title">Seu pedido</h3>
+        <button
+          type="button"
+          class="icon-btn"
+          data-close
+          aria-label="Fechar carrinho"
+        >
+          &times;
+        </button>
+      </header>
+
+      <div class="modal-body">
+        <p class="closed-notice" id="closed-notice" hidden></p>
+
+        <p class="area-notice">Atendemos somente Itaberaí - GO.</p>
+
+        <!-- Carrinho vazio -->
+        <div id="cart-empty" class="cart-empty" hidden>
+          <p>Seu carrinho está vazio.</p>
+          <button type="button" class="btn-ghost" data-close>
+            Ver cardápio
+          </button>
+        </div>
+
+        <!-- Itens do carrinho (montados pelo JavaScript) -->
+        <ul class="cart-items" id="cart-items"></ul>
+
+        <!-- Dados do pedido -->
+        <div id="cart-form">
+          <fieldset class="field-group">
+            <legend>Como você quer receber?</legend>
+            <label class="choice">
+              <input type="radio" name="order-mode" value="entrega" checked />
+              <span>Entrega</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="order-mode" value="retirada" />
+              <span>Retirar no local</span>
+            </label>
+          </fieldset>
+
+          <div class="field">
+            <label for="customer-name">Seu nome</label>
+            <input
+              type="text"
+              id="customer-name"
+              autocomplete="name"
+              maxlength="60"
+            />
+          </div>
+
+          <div class="field" id="address-field">
+            <label for="customer-address">Endereço de entrega</label>
+            <input
+              type="text"
+              id="customer-address"
+              autocomplete="street-address"
+              maxlength="140"
+              placeholder="Rua, número, bairro e ponto de referência"
+            />
+          </div>
+
+          <div class="field">
+            <label for="payment-method">Forma de pagamento (na entrega)</label>
+            <select id="payment-method">
+              <option value="">Combinar pelo WhatsApp</option>
+              <option value="Pix">Pix</option>
+              <option value="Cartão">Cartão</option>
+              <option value="Dinheiro">Dinheiro</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="order-note">Observações do pedido (opcional)</label>
+            <textarea id="order-note" rows="2" maxlength="200"></textarea>
+          </div>
+        </div>
+
+        <dl class="cart-summary" id="cart-summary"></dl>
+
+        <p class="form-error" id="cart-error" role="alert" hidden></p>
+      </div>
+
+      <footer class="modal-footer modal-footer-cart">
+        <button type="button" class="btn-whatsapp" id="btn-checkout">
+          Finalizar pedido pelo WhatsApp
+        </button>
+        <button type="button" class="btn-link" id="btn-clear">
+          Esvaziar carrinho
+        </button>
+      </footer>
+    </dialog>
+
+    <!-- =====================================================
+         8. AVISO RÁPIDO
+    ===================================================== -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
